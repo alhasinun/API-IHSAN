@@ -39,7 +39,7 @@ app = FastAPI()
 def read_root():
     return {'messages':'This is an api of Steam Games rating and popularity'}
 
-@app.get('/game_rate')
+@app.get('/rating_game')
 def highrate_game():
     #Read the data from web (Steam Games)
     data = urlopen('https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15')
@@ -54,7 +54,7 @@ def highrate_game():
     game_rate = high_rated.to_dict('records')
     return {json.dumps(game_rate, indent=2)}
     
-@app.get('/game_pop')
+@app.get('/popular_game')
 def pop_game():
     #Read the data from web (Steam Games)
     data1 = urlopen('https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15')
