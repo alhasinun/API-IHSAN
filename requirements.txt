@@ -1,5 +1,4 @@
 pandas
 uvicorn
 fastapi
-urllib.request
 json
