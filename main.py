@@ -52,7 +52,7 @@ def highrate_game():
     
     #Convert the dataframe into dictionary and then dumps it as json so it will be shown neatly
     game_rate = high_rated.to_dict('records')
-    return {json.dumps(game_rate, indent=2)}
+    return (game_rate)
     
 @app.get('/popular_game')
 def pop_game():
@@ -67,7 +67,7 @@ def pop_game():
     
     #Convert the dataframe into dictionary and then dumps it as json so it will be shown neatly
     game_popular = popular.to_dict('records')
-    return {json.dumps(game_popular, indent=2)}
+    return (game_popular)
 
 if __name__ == '__main__':
     uvicorn.run(app, host='127.0.0.1', port=8000, log_level='info')
